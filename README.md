@@ -9,6 +9,8 @@ Static marketing site for **Fedora Technologies**, designed to be hosted from a 
 - `approach.html` – Philosophy + how we work + process.
 - `about.html` – Company overview, who we serve, why Fedora, commitment.
 - `contact.html` – Contact page with mailto-based form (static-friendly).
+- `responsible-marketing.html` – Fedora Technologies responsible marketing statement (truthfulness, transparency, inclusion, privacy).
+- `privacy.html` – Privacy overview for this static site.
 - `styles.css` – Custom responsive styling inspired by modern MSP sites (dark, teal-focused aesthetic).
 - `main.js` – Lightweight enhancements (mobile nav, smooth scrolling for in-page anchors, active nav state, footer year, mailto form handler).
 - `assets/logo.svg` – Placeholder logo file (replace with your real logo).
@@ -81,5 +83,6 @@ The Worker will proxy all traffic to your GitHub Pages origin while letting you 
 - Update email and contact details in `contact.html` and the footer across pages.
 - Replace or extend sections with additional offerings, industries served, or case studies.
 - The contact form is static-friendly and uses `mailto:`; to use a hosted form, replace the form handler in `main.js` (or set a real `action`).
+- If you want to align to responsible marketing guidelines, edit `responsible-marketing.html` and `privacy.html` to match your preferred language and jurisdiction.
 
 If you tell me your preferred contact email, phone, and social links, I can pre-wire those into the site. 

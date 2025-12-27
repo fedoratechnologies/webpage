@@ -731,6 +731,7 @@ a:hover {
 .footer-links {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 3rem;
 }
 
