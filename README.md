@@ -4,36 +4,35 @@ Static marketing site for **Fedora Technologies**, designed to be hosted from a 
 
 ## Project structure
 
-- `index.html` – Home page (high-level overview + calls to action).
-- `services.html` – Detailed service offerings.
-- `approach.html` – Philosophy + how we work + process.
-- `about.html` – Company overview, who we serve, why Fedora, commitment.
-- `contact.html` – Contact page with mailto-based form (static-friendly).
-- `responsible-marketing.html` – Fedora Technologies responsible marketing statement (truthfulness, transparency, inclusion, privacy).
-- `privacy.html` – Privacy overview for this static site.
-- `styles.css` – Custom responsive styling inspired by modern MSP sites (dark, teal-focused aesthetic).
-- `main.js` – Lightweight enhancements (mobile nav, smooth scrolling for in-page anchors, active nav state, footer year, mailto form handler).
-- `assets/logo.png` – Your logo (used in header/footer + favicon).
+- `public/` – The static site served to visitors.
+  - `public/index.html` – Home page (high-level overview + calls to action).
+  - `public/services.html` – Detailed service offerings.
+  - `public/approach.html` – Philosophy + how we work + process.
+  - `public/about.html` – Company overview, who we serve, why Fedora, commitment.
+  - `public/contact.html` – Contact page with mailto-based form (static-friendly).
+  - `public/responsible-marketing.html` – Responsible marketing statement.
+  - `public/privacy.html` – Privacy overview for this static site.
+  - `public/styles.css` – Site styling.
+  - `public/main.js` – Site JavaScript (nav, active state, mailto form).
+  - `public/assets/logo.png` – Your logo (used in header/footer + favicon).
+- `src/index.js` – Cloudflare Worker that serves the static assets.
+- `wrangler.jsonc` – Cloudflare Wrangler config (entrypoint + assets directory).
 
 ## Getting started
 
-1. Replace `assets/logo.png` with your real logo (recommended: square-ish mark or wordmark that looks good at small sizes).
+1. Replace `public/assets/logo.png` with your real logo (recommended: square-ish mark or wordmark that looks good at small sizes).
 2. Preview locally:
-   - `python3 -m http.server 5173`
+   - `cd public && python3 -m http.server 5173`
    - Open `http://localhost:5173`
 
 You can customize copy, links, and contact details directly in the HTML pages.
 
 ## GitHub Pages hosting
 
-2. In your repo, go to **Settings → Pages**.
-3. Under **Build and deployment**, choose:
-   - **Source**: `Deploy from a branch`
-   - **Branch**: `main` / `/ (root)`
-4. Save. GitHub will build and expose a Pages URL like:
-   - `https://<your-github-username>.github.io/<repo-name>/`
+This repo is currently organized for Cloudflare Workers (static files live in `public/`). For GitHub Pages, either:
 
-Once that URL works, you have a publicly reachable static site.
+- Move the contents of `public/` to the repo root, then enable Pages for `main` / `/ (root)`, or
+- Set up a GitHub Action to publish `public/` to Pages.
 
 ## Fronting the site with Cloudflare
 
@@ -77,6 +76,10 @@ If you prefer to keep GitHub Pages as the origin and place a Worker in front:
 4. Point the DNS for that hostname at Cloudflare (orange cloud enabled).
 
 The Worker will proxy all traffic to your GitHub Pages origin while letting you add Cloudflare features (security rules, caching, logging, etc.).
+
+## Deploying with Cloudflare Workers (Wrangler)
+
+This repo is configured for `npx wrangler deploy` and serves the contents of `public/` from a Cloudflare Worker.
 
 ## Customizing the site
 
