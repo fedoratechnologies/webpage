@@ -18,6 +18,9 @@
   --shadow-soft: 0 32px 80px rgba(15, 23, 42, 0.85);
   --shadow-card: 0 24px 50px rgba(15, 23, 42, 0.9);
   --nav-height: 72px;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "SF Pro Display", "SF Pro Text", "Segoe UI Variable", "Segoe UI", sans-serif;
+  --font-serif: "Times New Roman", Times, serif;
 }
 
 *,
@@ -34,8 +37,7 @@ body {
 }
 
 body {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "SF Pro Display", "SF Pro Text", "Segoe UI Variable", "Segoe UI", sans-serif;
+  font-family: var(--font-serif);
   background: radial-gradient(circle at top left, #0b1636 0, #020617 55%) fixed,
     radial-gradient(circle at 30% 85%, rgba(56, 189, 248, 0.12), transparent 55%)
       fixed,
@@ -55,7 +57,30 @@ body {
 h1,
 h2,
 h3 {
-  letter-spacing: -0.015em;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.brand,
+.main-nav,
+.nav-list a,
+.btn,
+.eyebrow,
+.hero-metrics dt,
+.footer-heading {
+  font-family: var(--font-sans);
+}
+
+.hero h1,
+.page-hero h1 {
+  letter-spacing: 0.045em;
+}
+
+.section-header h2,
+.panel-copy h2,
+.callout-copy h2 {
+  letter-spacing: 0.035em;
 }
 
 img {
