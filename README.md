@@ -13,11 +13,11 @@ Static marketing site for **Fedora Technologies**, designed to be hosted from a 
 - `privacy.html` – Privacy overview for this static site.
 - `styles.css` – Custom responsive styling inspired by modern MSP sites (dark, teal-focused aesthetic).
 - `main.js` – Lightweight enhancements (mobile nav, smooth scrolling for in-page anchors, active nav state, footer year, mailto form handler).
-- `assets/logo.svg` – Placeholder logo file (replace with your real logo).
+- `assets/logo.png` – Your logo (used in header/footer + favicon).
 
 ## Getting started
 
-1. Replace `assets/logo.svg` with your real logo (SVG preferred). If you have a PNG, either convert it to SVG or update the references in the HTML pages.
+1. Replace `assets/logo.png` with your real logo (recommended: square-ish mark or wordmark that looks good at small sizes).
 2. Preview locally:
    - `python3 -m http.server 5173`
    - Open `http://localhost:5173`

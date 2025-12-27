@@ -34,8 +34,8 @@ body {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Segoe UI", sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "SF Pro Display", "SF Pro Text", "Segoe UI Variable", "Segoe UI", sans-serif;
   background: radial-gradient(circle at top left, #0b1636 0, #020617 55%) fixed,
     radial-gradient(circle at 30% 85%, rgba(56, 189, 248, 0.12), transparent 55%)
       fixed,
@@ -50,6 +50,12 @@ body {
     var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.015em;
 }
 
 img {
@@ -103,9 +109,11 @@ a:hover {
 }
 
 .brand-mark {
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   object-fit: contain;
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.35);
   filter: drop-shadow(0 0 24px rgba(56, 189, 248, 0.5));
 }
 
@@ -169,16 +177,28 @@ a:hover {
 }
 
 .nav-cta {
-  padding: 0.45rem 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0.45rem 0.9rem;
+  white-space: nowrap;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
-  color: #0b1120;
+  background: rgba(14, 165, 233, 0.16);
+  border: 1px solid rgba(34, 211, 238, 0.55);
+  color: var(--text);
   font-weight: 600;
-  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.45);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.9rem;
 }
 
 .nav-cta:hover {
-  filter: brightness(1.08);
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #020617;
+  border-color: transparent;
+  filter: none;
 }
 
 .nav-toggle {
